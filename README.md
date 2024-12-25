@@ -1,22 +1,65 @@
-# nvim-spacecraft 🚀  
-**A modern Neovim configuration leveraging the power of Space as the Leader key.**  
+# **nvim-spacecraft**  
+A modular Neovim configuration for modern development.  
 
-## Features  
-- **Leader Key**: Space (`<Leader>`) as the central navigation tool.  
-- **Plugin Manager**: Managed via `packer.nvim` for seamless plugin installation and updates.  
-- **LSP Support**: Integrated Language Server Protocols (`pyright`, `html`, `cssls`, `ts_ls`, `tailwindcss`).  
-- **Treesitter**: Syntax-aware highlighting for better code visibility.  
-- **Telescope**: Effortless file and buffer navigation.  
-- **Theme**: Tokyo Night for a beautiful developer environment.  
-- **Bufferline**: Tab management with diagnostics support.  
-- **Django Utilities**: Tools to assist Django development.  
+---
 
-## Requirements  
-- Neovim (>= 0.8)  
-- Git  
-- Python, Node.js, or other dependencies based on your language servers  
+## **Features**  
+- **Leader Key**: Space (`<Leader>`) for custom commands.  
+- **LSP Ready**: Preconfigured for Python, JavaScript, TypeScript, TailwindCSS, HTML, and CSS.  
+- **Autocompletion**: Context-aware completion using `nvim-cmp` and `LuaSnip`.  
+- **Syntax Highlighting**: Powered by `nvim-treesitter`.  
+- **File Navigation**: Fast file and buffer searching with `telescope.nvim` and `nvim-tree.lua`.  
+- **Custom UI**: Sleek design with `tokyonight.nvim` theme and buffer tabs.  
 
-## Installation  
-1. Clone the repository to your Neovim config directory:  
+---
+
+## **Installation**  
+1. Clone the repo:  
    ```bash
    git clone https://github.com/yourusername/nvim-spacecraft ~/.config/nvim
+2. Launch Neovim to install packer.nvim.
+3. Run :PackerSync to install plugins.
+   ```nvim
+   :PackerSync
+   ```
+   
+---
+
+## **Key Bindings**
+|Key Binding | Action |
+| --- | --- |
+| `<Leader>w` | Save file |
+| `<Leader>q` | Quit Neovim |
+| `<Leader>ff` | Find files |
+| `<Leader>fg` | Search text |
+| `<Leader>e` | Toggle file explorer |
+
+---
+
+## **Core Plugins**
+* `packer.nvim`: Plugin manager.
+* `nvim-lspconfig`: LSP setup.
+* `mason.nvim`: Manage LSP servers.
+* `nvim-cmp`: Autocompletion.
+* `nvim-treesitter`: Syntax highlighting.
+* `telescope.nvim`: File searching.
+* `nvim-tree.lua`: File explorer.
+* `tokyonight.nvim`: Theme.
+* `bufferline.nvim`: Buffer tabs.
+
+---
+
+## **LSP Setup**
+Preinstalled servers:
+*Python: pyright
+*JavaScript/TypeScript: tsserver
+*TailwindCSS: tailwindcss
+*HTML/CSS: html, cssls
+
+Add more servers in mason-lspconfig like this:
+```lua
+   require('mason-lspconfig').setup({
+  ensure_installed = { "server_name" }
+})
+```
+
