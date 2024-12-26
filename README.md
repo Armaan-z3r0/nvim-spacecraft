@@ -16,7 +16,7 @@ A modular Neovim configuration for modern development.
 ## **Installation**  
 1. Clone the repo:  
    ```bash
-   git clone https://github.com/yourusername/nvim-spacecraft ~/.config/nvim
+   git clone https://github.com/Armaan-z3r0/nvim-spacecraft.git ~/.config/nvim
 2. Launch Neovim to install packer.nvim.
 3. Run :PackerSync to install plugins.
    ```nvim
